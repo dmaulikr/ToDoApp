@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8425C9D174F72AE40FE2AAE4 /* Pods_Crux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB019F6B29E962B69F2BED3 /* Pods_Crux.framework */; };
+		BAF335357CD4C3877398549D /* Pods_CruxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74017A527F390756C2DAD212 /* Pods_CruxTests.framework */; };
 		E45240571F018C0600109570 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45240561F018C0600109570 /* AppDelegate.swift */; };
-		E45240591F018C0600109570 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45240581F018C0600109570 /* ViewController.swift */; };
 		E452405C1F018C0600109570 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E452405A1F018C0600109570 /* Main.storyboard */; };
 		E452405E1F018C0600109570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E452405D1F018C0600109570 /* Assets.xcassets */; };
 		E45240611F018C0600109570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E452405F1F018C0600109570 /* LaunchScreen.storyboard */; };
 		E452406C1F018C0700109570 /* CruxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452406B1F018C0700109570 /* CruxTests.swift */; };
+		E45240771F018E4E00109570 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45240761F018E4E00109570 /* SignInViewController.swift */; };
+		E45240791F019CF400109570 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45240781F019CF400109570 /* GoogleService-Info.plist */; };
+		E452407B1F024A2600109570 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452407A1F024A2600109570 /* SignUpViewController.swift */; };
+		E452407D1F02F4D900109570 /* FirstItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452407C1F02F4D900109570 /* FirstItemViewController.swift */; };
+		E48478EE1F04543200E89AFA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48478ED1F04543200E89AFA /* ProfileViewController.swift */; };
+		E48478F01F045CF600E89AFA /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48478EF1F045CF600E89AFA /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +33,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0510394CC9CA6595B193D44B /* Pods-Crux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crux.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crux/Pods-Crux.release.xcconfig"; sourceTree = "<group>"; };
+		74017A527F390756C2DAD212 /* Pods_CruxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76359615BEC66F129F22E447 /* Pods-CruxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruxTests/Pods-CruxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8EB019F6B29E962B69F2BED3 /* Pods_Crux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC51CA29C781E7C141DBB54A /* Pods-CruxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruxTests/Pods-CruxTests.release.xcconfig"; sourceTree = "<group>"; };
+		DFA791232FB98130BAA01642 /* Pods-Crux.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crux.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crux/Pods-Crux.debug.xcconfig"; sourceTree = "<group>"; };
 		E45240531F018C0600109570 /* Crux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45240561F018C0600109570 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E45240581F018C0600109570 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E452405B1F018C0600109570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E452405D1F018C0600109570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45240601F018C0600109570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +48,12 @@
 		E45240671F018C0700109570 /* CruxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E452406B1F018C0700109570 /* CruxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruxTests.swift; sourceTree = "<group>"; };
 		E452406D1F018C0700109570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45240761F018E4E00109570 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E45240781F019CF400109570 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E452407A1F024A2600109570 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E452407C1F02F4D900109570 /* FirstItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstItemViewController.swift; sourceTree = "<group>"; };
+		E48478ED1F04543200E89AFA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E48478EF1F045CF600E89AFA /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8425C9D174F72AE40FE2AAE4 /* Pods_Crux.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +69,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF335357CD4C3877398549D /* Pods_CruxTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22DF1D00EFE346D479E49194 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EB019F6B29E962B69F2BED3 /* Pods_Crux.framework */,
+				74017A527F390756C2DAD212 /* Pods_CruxTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCF43711E46857FFDB0429A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFA791232FB98130BAA01642 /* Pods-Crux.debug.xcconfig */,
+				0510394CC9CA6595B193D44B /* Pods-Crux.release.xcconfig */,
+				76359615BEC66F129F22E447 /* Pods-CruxTests.debug.xcconfig */,
+				CC51CA29C781E7C141DBB54A /* Pods-CruxTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E452404A1F018C0600109570 = {
 			isa = PBXGroup;
 			children = (
 				E45240551F018C0600109570 /* Crux */,
 				E452406A1F018C0700109570 /* CruxTests */,
 				E45240541F018C0600109570 /* Products */,
+				CCF43711E46857FFDB0429A9 /* Pods */,
+				22DF1D00EFE346D479E49194 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +120,16 @@
 			isa = PBXGroup;
 			children = (
 				E45240561F018C0600109570 /* AppDelegate.swift */,
-				E45240581F018C0600109570 /* ViewController.swift */,
+				E45240761F018E4E00109570 /* SignInViewController.swift */,
+				E452407A1F024A2600109570 /* SignUpViewController.swift */,
+				E452407C1F02F4D900109570 /* FirstItemViewController.swift */,
+				E48478EF1F045CF600E89AFA /* EditProfileViewController.swift */,
+				E48478ED1F04543200E89AFA /* ProfileViewController.swift */,
 				E452405A1F018C0600109570 /* Main.storyboard */,
-				E452405D1F018C0600109570 /* Assets.xcassets */,
 				E452405F1F018C0600109570 /* LaunchScreen.storyboard */,
+				E452405D1F018C0600109570 /* Assets.xcassets */,
 				E45240621F018C0600109570 /* Info.plist */,
+				E45240781F019CF400109570 /* GoogleService-Info.plist */,
 			);
 			path = Crux;
 			sourceTree = "<group>";
@@ -103,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E45240701F018C0700109570 /* Build configuration list for PBXNativeTarget "Crux" */;
 			buildPhases = (
+				C78A2279D6B644555839F876 /* [CP] Check Pods Manifest.lock */,
 				E452404F1F018C0600109570 /* Sources */,
 				E45240501F018C0600109570 /* Frameworks */,
 				E45240511F018C0600109570 /* Resources */,
+				CD7560C59D28FF900A018422 /* [CP] Embed Pods Frameworks */,
+				AB7D859DD2FE7466B4F8C1AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E45240731F018C0700109570 /* Build configuration list for PBXNativeTarget "CruxTests" */;
 			buildPhases = (
+				0B3595088B93668387CF299F /* [CP] Check Pods Manifest.lock */,
 				E45240631F018C0700109570 /* Sources */,
 				E45240641F018C0700109570 /* Frameworks */,
 				E45240651F018C0700109570 /* Resources */,
+				B4E46BAE56DBA7A6D04ED099 /* [CP] Embed Pods Frameworks */,
+				1A2E978379783399BCC32D85 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +199,7 @@
 				TargetAttributes = {
 					E45240521F018C0600109570 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = CTBN3B6AZZ;
 						ProvisioningStyle = Automatic;
 					};
 					E45240661F018C0700109570 = {
@@ -180,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45240611F018C0600109570 /* LaunchScreen.storyboard in Resources */,
+				E45240791F019CF400109570 /* GoogleService-Info.plist in Resources */,
 				E452405E1F018C0600109570 /* Assets.xcassets in Resources */,
 				E452405C1F018C0600109570 /* Main.storyboard in Resources */,
 			);
@@ -194,13 +249,110 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B3595088B93668387CF299F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1A2E978379783399BCC32D85 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruxTests/Pods-CruxTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB7D859DD2FE7466B4F8C1AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crux/Pods-Crux-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E46BAE56DBA7A6D04ED099 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruxTests/Pods-CruxTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C78A2279D6B644555839F876 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD7560C59D28FF900A018422 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crux/Pods-Crux-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E452404F1F018C0600109570 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45240591F018C0600109570 /* ViewController.swift in Sources */,
+				E48478EE1F04543200E89AFA /* ProfileViewController.swift in Sources */,
 				E45240571F018C0600109570 /* AppDelegate.swift in Sources */,
+				E452407D1F02F4D900109570 /* FirstItemViewController.swift in Sources */,
+				E452407B1F024A2600109570 /* SignUpViewController.swift in Sources */,
+				E45240771F018E4E00109570 /* SignInViewController.swift in Sources */,
+				E48478F01F045CF600E89AFA /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +491,10 @@
 		};
 		E45240711F018C0700109570 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFA791232FB98130BAA01642 /* Pods-Crux.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CTBN3B6AZZ;
 				INFOPLIST_FILE = Crux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cruxdeveloper.Crux;
@@ -351,8 +505,10 @@
 		};
 		E45240721F018C0700109570 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0510394CC9CA6595B193D44B /* Pods-Crux.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CTBN3B6AZZ;
 				INFOPLIST_FILE = Crux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cruxdeveloper.Crux;
@@ -363,6 +519,7 @@
 		};
 		E45240741F018C0700109570 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76359615BEC66F129F22E447 /* Pods-CruxTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -377,6 +534,7 @@
 		};
 		E45240751F018C0700109570 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC51CA29C781E7C141DBB54A /* Pods-CruxTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -408,6 +566,7 @@
 				E45240721F018C0700109570 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E45240731F018C0700109570 /* Build configuration list for PBXNativeTarget "CruxTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +575,7 @@
 				E45240751F018C0700109570 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
