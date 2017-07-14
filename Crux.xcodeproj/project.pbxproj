@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8425C9D174F72AE40FE2AAE4 /* Pods_Crux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB019F6B29E962B69F2BED3 /* Pods_Crux.framework */; };
 		BAF335357CD4C3877398549D /* Pods_CruxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74017A527F390756C2DAD212 /* Pods_CruxTests.framework */; };
+		E41C1DD21F159A5500C29CE5 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C1DD11F159A5500C29CE5 /* TaskViewController.swift */; };
 		E45240571F018C0600109570 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45240561F018C0600109570 /* AppDelegate.swift */; };
 		E452405C1F018C0600109570 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E452405A1F018C0600109570 /* Main.storyboard */; };
 		E452405E1F018C0600109570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E452405D1F018C0600109570 /* Assets.xcassets */; };
@@ -20,6 +21,9 @@
 		E452407D1F02F4D900109570 /* FirstItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452407C1F02F4D900109570 /* FirstItemViewController.swift */; };
 		E48478EE1F04543200E89AFA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48478ED1F04543200E89AFA /* ProfileViewController.swift */; };
 		E48478F01F045CF600E89AFA /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48478EF1F045CF600E89AFA /* EditProfileViewController.swift */; };
+		E4B9FE561F11C81B00AE05C5 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE551F11C81B00AE05C5 /* ToDoTableViewCell.swift */; };
+		E4B9FE581F11C90800AE05C5 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE571F11C90800AE05C5 /* ToDoTableViewController.swift */; };
+		E4B9FE5A1F11CA1900AE05C5 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9FE591F11CA1900AE05C5 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,7 @@
 		8EB019F6B29E962B69F2BED3 /* Pods_Crux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC51CA29C781E7C141DBB54A /* Pods-CruxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruxTests/Pods-CruxTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFA791232FB98130BAA01642 /* Pods-Crux.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crux.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crux/Pods-Crux.debug.xcconfig"; sourceTree = "<group>"; };
+		E41C1DD11F159A5500C29CE5 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		E45240531F018C0600109570 /* Crux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45240561F018C0600109570 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E452405B1F018C0600109570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +59,9 @@
 		E452407C1F02F4D900109570 /* FirstItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstItemViewController.swift; sourceTree = "<group>"; };
 		E48478ED1F04543200E89AFA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E48478EF1F045CF600E89AFA /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		E4B9FE551F11C81B00AE05C5 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		E4B9FE571F11C90800AE05C5 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		E4B9FE591F11CA1900AE05C5 /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,10 @@
 				E452407C1F02F4D900109570 /* FirstItemViewController.swift */,
 				E48478EF1F045CF600E89AFA /* EditProfileViewController.swift */,
 				E48478ED1F04543200E89AFA /* ProfileViewController.swift */,
+				E41C1DD11F159A5500C29CE5 /* TaskViewController.swift */,
+				E4B9FE591F11CA1900AE05C5 /* ToDo.swift */,
+				E4B9FE551F11C81B00AE05C5 /* ToDoTableViewCell.swift */,
+				E4B9FE571F11C90800AE05C5 /* ToDoTableViewController.swift */,
 				E452405A1F018C0600109570 /* Main.storyboard */,
 				E452405F1F018C0600109570 /* LaunchScreen.storyboard */,
 				E452405D1F018C0600109570 /* Assets.xcassets */,
@@ -347,10 +359,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B9FE5A1F11CA1900AE05C5 /* ToDo.swift in Sources */,
 				E48478EE1F04543200E89AFA /* ProfileViewController.swift in Sources */,
 				E45240571F018C0600109570 /* AppDelegate.swift in Sources */,
+				E4B9FE561F11C81B00AE05C5 /* ToDoTableViewCell.swift in Sources */,
 				E452407D1F02F4D900109570 /* FirstItemViewController.swift in Sources */,
 				E452407B1F024A2600109570 /* SignUpViewController.swift in Sources */,
+				E4B9FE581F11C90800AE05C5 /* ToDoTableViewController.swift in Sources */,
+				E41C1DD21F159A5500C29CE5 /* TaskViewController.swift in Sources */,
 				E45240771F018E4E00109570 /* SignInViewController.swift in Sources */,
 				E48478F01F045CF600E89AFA /* EditProfileViewController.swift in Sources */,
 			);
