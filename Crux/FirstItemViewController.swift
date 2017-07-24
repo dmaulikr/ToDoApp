@@ -13,13 +13,15 @@ import FirebaseAuth
 class FirstItemViewController: UIViewController, UINavigationControllerDelegate {
     
     //MARK: Properties
+    
+    // Main Storyboard Object References
     @IBOutlet weak var firstName: UILabel!
     @IBOutlet weak var lastName: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var userID: UILabel!
     
+    // Firebase Database References
     let UserRef = Database.database().reference(withPath: "users")
-    //let CurrentUser: User!
     let userIdString : String = (Auth.auth().currentUser?.uid)!
 
     //MARK: Override Functions

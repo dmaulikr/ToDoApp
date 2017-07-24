@@ -21,7 +21,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet weak var lastNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var websiteText: UITextField!
-    //@IBOutlet weak var profilePictureImage: UIImageView!
     
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     

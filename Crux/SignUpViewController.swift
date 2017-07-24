@@ -13,15 +13,22 @@ import FirebaseAuth
 class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
+    
+    // Main Storyboard Object References
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    // Firebase Database References
     let RootRef = Database.database().reference()
     let UserRef = Database.database().reference(withPath: "users")
     var CurrentUser: User!
     
+    //MARK: Override Functions
+    
+    // viewDidLoad(): called after the view controller has loaded its
+    // view hierarchy into memory
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +47,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Load Controller Background
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "deepSeaBackground")?.draw(in: self.view.bounds)
-        
         if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext(){
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
@@ -49,7 +55,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
             debugPrint("Image not available")
         }
     }
-
+    
+    // didReceiveMemoryWarning(): called when the system determines that the amount
+    // of available memory is low
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,6 +65,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     //MARK: UITextFieldDelegate
     
+    // textFieldShouldReturn(): user pressed the return button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Find the next responder
         if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
@@ -69,6 +78,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     //MARK: Functions
     
+    // recordUserInDatabase(): records user data in Firebase Database
     func recordUserInDatabase() {
         let currentUserInfo = (["firstName": firstName.text!,
                                    "lastName": lastName.text!,
@@ -78,6 +88,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         CurrentUserRef.setValue(currentUserInfo)
     }
     
+    // createFirebaseUser(): record user data in Firebase Authentication
     func createFirebaseUser() {
         Auth.auth().createUser(withEmail: self.email.text!, password: self.password.text!) { (user, error) in
             if error == nil {
@@ -106,6 +117,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     //MARK: Actions
     
+    // onClickSignUp(): validate form and create Firebase user
     @IBAction func onClickSignUp(_ sender: UIButton) {
         if firstName.text == "" || lastName.text == "" {
             let alertController = UIAlertController(title: "", message: "Please enter your first and last name", preferredStyle: .alert)
@@ -129,6 +141,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     //MARK: Functions
     
+    // signInSegue(): segue to the Tab Bar Controller
     func signUpSegue() {
         performSegue(withIdentifier: "signUpSegue", sender: nil)
     }

@@ -8,6 +8,8 @@
 
 import UIKit
 import os.log
+import Firebase
+import FirebaseAuth
 
 class TaskViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
 
@@ -35,6 +37,13 @@ class TaskViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     let greenTrue = UIColor(red: 0, green: 153/255, blue: 0, alpha: 1)
     
+    // Firebase References
+    let UserRef = Database.database().reference(withPath: "users")
+    let TaskRef = Database.database().reference(withPath: "tasks")
+    let userIdString : String = (Auth.auth().currentUser?.uid)!
+    var CurrentUser: User!
+    var currentTaskKey = "unassigned"
+    
     /*
      This value is either passed by `ToDoTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new meal.
@@ -48,10 +57,11 @@ class TaskViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         taskNameTextField.delegate = self
         
         // If the task cell was tapped, fill in the task information
-        // Set up views if editing an existing Meal.
+        // Set up views if editing an existing Task.
         if let task = task {
             
             taskNameTextField.text = task.task
+            currentTaskKey = task.key
             
             let timerSeconds = task.duration
             setTimer.countDownDuration = TimeInterval(timerSeconds)
@@ -162,13 +172,24 @@ class TaskViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         }
         
         let taskName = taskNameTextField.text ?? ""
-        let taskDurationInSecs = setTimer.countDownDuration
+        let taskDurationInSecs = setTimer.countDownDuration        
         let taskFrequency = frequencyName()
         let taskDays = [daySunday, dayMonday, dayTuesday, dayWednesday, dayThursday, dayFriday, daySaturday]
         
+        var taskKey: String
+        if currentTaskKey != "unassigned" {
+            taskKey = currentTaskKey
+        } else {
+            let newEventRef = self.TaskRef.childByAutoId()
+            taskKey = newEventRef.key
+        }
+        
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        task = ToDo(task: taskName, duration: Float(taskDurationInSecs), frequency: taskFrequency, days: taskDays)
+        task = ToDo(task: taskName, duration: Float(taskDurationInSecs), frequency: taskFrequency, days: taskDays, user: userIdString, key: taskKey)
     }
+    
+    //MARK: Action
+    
     
     //MARK: Days of the Week Buttons
     
@@ -254,7 +275,7 @@ class TaskViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         
         let everyday = daySunday && dayMonday && dayTuesday && dayWednesday && dayThursday && dayFriday && daySaturday
         let weekdays = !daySunday && dayMonday && dayTuesday && dayWednesday && dayThursday && dayFriday && !daySaturday
-        let weekends = daySunday && !dayMonday && !dayTuesday && !dayWednesday && !dayThursday && !dayFriday && !daySaturday
+        let weekends = daySunday && !dayMonday && !dayTuesday && !dayWednesday && !dayThursday && !dayFriday && daySaturday
         let monwedfri = !daySunday && dayMonday && !dayTuesday && dayWednesday && !dayThursday && dayFriday && !daySaturday
         let tuesthurs = !daySunday && !dayMonday && dayTuesday && !dayWednesday && dayThursday && !dayFriday && !daySaturday
         let none = !daySunday && !dayMonday && !dayTuesday && !dayWednesday && !dayThursday && !dayFriday && !daySaturday
@@ -283,6 +304,5 @@ class TaskViewController: UIViewController, UITextFieldDelegate, UINavigationCon
             return string
         }
     }
-    
 
 }

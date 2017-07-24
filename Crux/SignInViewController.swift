@@ -13,13 +13,17 @@ import FirebaseAuth
 class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
 
     //MARK: Properties
+    
+    // Main Storyboard Object References
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    //MARK: Override Functions
+    
+    // viewDidLoad(): called after the view controller has loaded its
+    // view hierarchy into memory
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         // Text Field Delegate
         emailTextField.delegate = self
@@ -32,7 +36,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Load Controller Background
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "deepSeaBackground")?.draw(in: self.view.bounds)
-        
         if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext(){
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
@@ -41,7 +44,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
             debugPrint("Image not available")
         }
     }
-
+    
+    // didReceiveMemoryWarning(): called when the system determines that the amount
+    // of available memory is low
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,20 +56,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     // textFieldShouldReturn() called when the user hits the return button on the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Find the next responder
+        // Find the next responder in the View Controller
         if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextTextField.becomeFirstResponder()
         } else {
+            // Close the Keyboard
             textField.resignFirstResponder()
         }
         return true
     }
     
-    /*func textFieldDidEndEditing(_ textField: UITextField) {
-    }*/
-    
     //MARK: Actions
     
+    // onClickSignIn(): check if fields are fill in and sign user in
     @IBAction func onClickSignIn(_ sender: UIButton) {
         if emailTextField.text == "" || passwordTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
@@ -75,7 +79,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
             Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 if error == nil {
                     print("You have successfully logged in!")
-                    //performSegue(withIdentifier: "signInSegue", sender: nil)
                     self.signInSegue()
                 }
                 else{
@@ -97,10 +100,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     //MARK: Functions
     
+    // signInSegue(): segue to the Tab Bar Controller
     func signInSegue() {
         performSegue(withIdentifier: "signInSegue", sender: nil)
     }
     
+    // onClickForgotPassword(): not ready yet
     @IBAction func onClickForgotPassword(_ sender: UIButton) {
         print("Forgot Password feature not ready yet")
     }

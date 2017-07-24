@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import os.log
 import Firebase
 import FirebaseAuth
-import os.log
 
 class ProfileViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -31,8 +31,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
