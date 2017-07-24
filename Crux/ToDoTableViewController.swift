@@ -218,15 +218,16 @@ class ToDoTableViewController: UITableViewController {
                 let key = i.key as! String
                 let value = i.value
                 
+                // If the task does not belong to the user, skip it
+                let user = (value as! NSDictionary)["user"] as! String
+                if user != self.userIdString {
+                    continue
+                }
+                
                 let task = (value as! NSDictionary)["task"] as! String
                 let duration = (value as! NSDictionary)["duration"] as! Float
                 let frequency = (value as! NSDictionary)["frequency"] as! String
                 let days = (value as! NSDictionary)["days"] as! Array<Bool>
-                let user = (value as! NSDictionary)["user"] as! String
-                
-                if user != self.userIdString {
-                    continue
-                }
                 
                 // Check that the ToDo object with the key DNE in the toDoList Array
                 if self.toDoList.isEmpty {
