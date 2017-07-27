@@ -1,0 +1,6 @@
+framework module Pods_CruxTests {
+  umbrella header "Pods-CruxTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
