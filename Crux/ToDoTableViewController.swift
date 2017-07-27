@@ -211,61 +211,55 @@ class ToDoTableViewController: UITableViewController {
     private func loadSampleToDoList() {
         print("loadSampleToDoList: Load Sample To Do List begin")
         
-        // Load toDoList Items
-        TaskRef.observe(.value, with: { (snapshot) in
-            //self.arrayOfCellData.removeAll()
-            for i in (snapshot.value as! NSDictionary) {
-                let key = i.key as! String
-                let value = i.value
-                
-                // If the task does not belong to the user, skip it
-                let user = (value as! NSDictionary)["user"] as! String
-                if user != self.userIdString {
-                    continue
-                }
-                
-                let task = (value as! NSDictionary)["task"] as! String
-                let duration = (value as! NSDictionary)["duration"] as! Float
-                let frequency = (value as! NSDictionary)["frequency"] as! String
-                let days = (value as! NSDictionary)["days"] as! Array<Bool>
-                
-                // Check that the ToDo object with the key DNE in the toDoList Array
-                if self.toDoList.isEmpty {
-                    guard let item = ToDo(task: task, duration: duration, frequency: frequency, days: days, user: self.userIdString, key: key) else {
-                        fatalError("Unable to instantiate item")
+        UserRef.child(userIdString).observe(.value, with: {snapshot in
+            let taskList = (snapshot.value as! NSDictionary)["tasklist"] as! Array<String>
+            for taskKey in taskList {
+                self.TaskRef.child(taskKey).observe(.value, with: { snapshot in
+                    
+                    // If the task does not belong to the user, skip it
+                    let user = (snapshot.value as! NSDictionary)["user"] as! String
+                    if user != self.userIdString {
+                        print("User task list contains incorrect tasks: \(taskKey)")
                     }
-                    print("loadSampleToDoList - observe: New task was created with name: \(task) and key: \(key)")
-                    let newIndexPath = IndexPath(row: self.toDoList.count, section: 0)
-                    self.toDoList.append(item)
-                    self.tableView.insertRows(at: [newIndexPath], with: .automatic)
-                }
-                
-                var newTask = false
-                for j in self.toDoList {
-                    if j.key == key {
-                        print("Duplicate ToDo")
-                        newTask = false
-                        break
-                    } else {
-                        newTask = true
+                    
+                    let task = (snapshot.value as! NSDictionary)["task"] as! String
+                    let duration = (snapshot.value as! NSDictionary)["duration"] as! Float
+                    let frequency = (snapshot.value as! NSDictionary)["frequency"] as! String
+                    let days = (snapshot.value as! NSDictionary)["days"] as! Array<Bool>
+                    
+                    // Check that the ToDo object with the key DNE in the toDoList Array
+                    if self.toDoList.isEmpty {
+                        guard let item = ToDo(task: task, duration: duration, frequency: frequency, days: days, user: self.userIdString, key: taskKey) else {
+                            fatalError("Unable to instantiate item")
+                        }
+                        print("loadSampleToDoList - observe: New task was created with name: \(task) and key: \(taskKey)")
+                        let newIndexPath = IndexPath(row: self.toDoList.count, section: 0)
+                        self.toDoList.append(item)
+                        self.tableView.insertRows(at: [newIndexPath], with: .automatic)
                     }
-                }
-                if newTask {
-                    guard let item = ToDo(task: task, duration: duration, frequency: frequency, days: days, user: self.userIdString, key: key) else {
-                        fatalError("Unable to instantiate item")
+                    
+                    var newTask = false
+                    for j in self.toDoList {
+                        if j.key == taskKey {
+                            print("Duplicate ToDo")
+                            newTask = false
+                            break
+                        } else {
+                            newTask = true
+                        }
                     }
-                    print("loadSampleToDoList - observe: New task was created with name: \(task) and key: \(key)")
-                    let newIndexPath = IndexPath(row: self.toDoList.count, section: 0)
-                    self.toDoList.append(item)
-                    self.tableView.insertRows(at: [newIndexPath], with: .automatic)
-                }
-                
-                // Add a new item to toDoList
-                
+                    if newTask {
+                        guard let item = ToDo(task: task, duration: duration, frequency: frequency, days: days, user: self.userIdString, key: taskKey) else {
+                            fatalError("Unable to instantiate item")
+                        }
+                        print("loadSampleToDoList - observe: New task was created with name: \(task) and key: \(taskKey)")
+                        let newIndexPath = IndexPath(row: self.toDoList.count, section: 0)
+                        self.toDoList.append(item)
+                        self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+                    }
+                    
+                })
             }
-            print("loadSampleToDoList: Reloading data")
-            self.tableView.reloadData()
-            print("loadSampleToDoList: To Do: \(self.toDoList)")
         })
         print("loadSampleToDoList: Load Sample To Do List ended")
     }
